@@ -13,6 +13,7 @@ router.post('/addBlogs',addBlog);
 router.get('/getBlogs',getBlogs);
 router.get('/getUserBlogs/:email',getUserBlogs);
 router.delete('/deleteBlog/:blogId/:email', deleteUserBlogs);
+// router.delete('/deleteBlog', deleteUserBlogs);
 router.put('/markMostLiked/:id',markMostLiked);
 router.get('/getMarkMostLiked',getMarkMostLiked);
 

@@ -14,7 +14,7 @@ const getUserBlogs = async (req, res) => {
       return res.status(404).json({ success: false, message: "User not found" });
     }
 
-    console.log("User blogs:", user.blogs);
+    // console.log("User blogs:", user.blogs);
 
     const formattedBlogs = user.blogs.map((blog) => {
       // Safely create imageSrc

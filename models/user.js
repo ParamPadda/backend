@@ -42,17 +42,10 @@ const userSchema = new mongoose.Schema(
 
     blogs: [blogSubSchema], // Embedded blog entries
 
-   completedTasks: [
-  {
-    id: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "DailyTask",
-    },
-    title: String,
-    description: String,
-  },
-],
- // Tracks completed daily tasks by this user
+    // Simplified completedTasks to store just task IDs as strings
+    completedTasks: [{
+      type: String, // Store task IDs as strings for simplicity
+    }]
   },
   { timestamps: true }
 );

@@ -2,21 +2,14 @@ const User = require('../models/user');
 
 // GET all non-deleted users
 const getAllUsers = async (req, res) => {
-  try {
-    // const users = await User.find({ isDeleted: false });
-     const users = await User.find({
-            $or: [
-                { isDeleted: false },       // Users explicitly marked as not deleted
-                { isDeleted: { $exists: false } } // Users who don't have the field yet
-            ]
-        });
-    console.log(users);
-    res.status(200).json(users);
+   try {
+    const users = await User.find(); // do NOT filter by isDeleted
+    res.json(users);
   } catch (err) {
-    res.status(500).json({ message: "Error fetching users", error: err });
+    res.status(500).json({ error: 'Server error' });
   }
 };
-// get api to get all users whose isDeleted is true
+
 // SOFT DELETE user
 const deleteUser = async (req, res) => {
   try {
