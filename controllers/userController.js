@@ -1,5 +1,6 @@
 const User = require('../models/user');
 
+
 // GET all non-deleted users
 const getAllUsers = async (req, res) => {
    try {

@@ -26,7 +26,6 @@ app.use(routes);
 
 app.get("/", (req, res) => {
   res.send("Welcome to port 8080");
-  res.json({ success: "true", message: "successful request" });
 });
 
 app.listen(PORT, () => {
